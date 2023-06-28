@@ -19,7 +19,8 @@ pipeline{
 		sh '''
 		    sudo kubectl apply -f deployment.yml
 		    sudo kubectl apply -f  nodeport-webserver.yml
-			}
+		'''	
+		}
 	}
         
     }
