@@ -1,0 +1,26 @@
+pipeline{
+    agent {label 'k8s'}
+    stages{
+        stage('git clone'){
+        steps{
+           git branch: 'main', url: 'https://github.com/Havoc13Naveen/sample-httpd.git'
+        }
+        }
+	stage('docker image & tag'){
+		steps{
+		   sh '''
+			sudo bash script.sh
+			sudo bash deploy.sh > deployment.yml
+			'''
+			}
+	}
+	stage('k8s deployment & nodeport'){
+	     steps{
+		sh '''
+		    sudo kubectl apply -f deployment.yml
+		    sudo kubectl apply -f  nodeport-webserver.yml
+			}
+	}
+        
+    }
+}
