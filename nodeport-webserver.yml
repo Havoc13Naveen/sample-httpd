@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+        name: nodeport-webserver
+spec:
+    type: NodePort
+    selector:
+            app: webserver
+    ports:
+         - port: 32200
+           targetPort: 80
+
