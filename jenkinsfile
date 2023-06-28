@@ -17,8 +17,9 @@ pipeline{
 	stage('k8s deployment & nodeport'){
 	     steps{
 		sh '''
-		    sudo kubectl apply -f deployment.yml
-		    sudo kubectl apply -f  nodeport-webserver.yml
+		   # sudo kubectl apply -f deployment.yml
+		   # sudo kubectl apply -f  nodeport-webserver.yml
+			sudo cat deployment.yml
 		'''	
 		}
 	}
