@@ -5,6 +5,6 @@ git status
 
 
 gitusername="havoc13naveen"
-gittoken="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"
+gittoken="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"
 giturl="github.com/Havoc13Naveen/sample-httpd.git/"
 git push https://$gitusername:$gittoken@$giturl
