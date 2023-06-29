@@ -4,7 +4,6 @@ git commit -m "adding"
 git status
 
 
-gitusername=$(havoc13naveen)
-gittoken=$(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)
-
-git push --credentials username=$gitusername,token=$gittoken
+gitusername=`"havoc13naveen"`
+gittoken=`"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"`
+git pull https://$gitusername:$gittoken@github.com/Havoc13Naveen/sample-httpd.git
